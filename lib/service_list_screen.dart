@@ -35,7 +35,7 @@ class _ServiceListScreenState extends State<ServiceListScreen> {
         child: ListView(
           children: [
             const DrawerHeader(
-              decoration: BoxDecoration(color: Colors.blue),
+              decoration: BoxDecoration(color: Colors.lightGreen),
               child: Center(
                 child: Text(
                   'Menu',
@@ -87,4 +87,3 @@ class _ServiceListScreenState extends State<ServiceListScreen> {
     );
   }
 }
-

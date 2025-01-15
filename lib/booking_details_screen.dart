@@ -14,13 +14,13 @@ class BookingDetailsScreen extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Text('Name: ${booking['name']}', style: const TextStyle(fontSize: 18)),
+            Text('Name: ${booking['name']}', style: const TextStyle(fontSize: 18, color: Colors.black)),
             const SizedBox(height: 10),
-            Text('Service: ${booking['service']}', style: const TextStyle(fontSize: 18)),
+            Text('Service: ${booking['service']}', style: const TextStyle(fontSize: 18, color: Colors.black)),
             const SizedBox(height: 10),
-            Text('Date: ${booking['date']}', style: const TextStyle(fontSize: 18)),
+            Text('Date: ${booking['date']}', style: const TextStyle(fontSize: 18, color: Colors.black)),
             const SizedBox(height: 10),
-            Text('Time: ${booking['time']}', style: const TextStyle(fontSize: 18)),
+            Text('Time: ${booking['time']}', style: const TextStyle(fontSize: 18, color: Colors.black)),
           ],
         ),
       ),

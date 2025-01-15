@@ -23,16 +23,37 @@ class _BookingScreenState extends State<BookingScreen> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Text('Service: ${widget.service['name']}', style: const TextStyle(fontSize: 18)),
+            Text('Service: ${widget.service['name']}',
+                style: const TextStyle(fontSize: 18)),
             const SizedBox(height: 20),
             TextField(
+              style: TextStyle(
+                color: Colors.black, // Change text color
+                fontSize: 18, // Change font size
+              ),
               controller: _nameController,
-              decoration: const InputDecoration(labelText: 'Your Name'),
+              decoration: const InputDecoration(
+                labelText: 'Your Name',
+                labelStyle: TextStyle(
+                  color: Colors.black, // Change label text color
+                  fontSize: 16,
+                ),
+              ),
             ),
             const SizedBox(height: 20),
             TextField(
+              style: TextStyle(
+                color: Colors.black, // Change text color
+                fontSize: 18, // Change font size
+              ),
               controller: _dateController,
-              decoration: const InputDecoration(labelText: 'Select Date'),
+              decoration: const InputDecoration(
+                labelText: 'Select Date',
+                labelStyle: TextStyle(
+                  color: Colors.black, // Change label text color
+                  fontSize: 16,
+                ),
+              ),
               onTap: () async {
                 DateTime? pickedDate = await showDatePicker(
                   context: context,
@@ -41,14 +62,25 @@ class _BookingScreenState extends State<BookingScreen> {
                   lastDate: DateTime(2101),
                 );
                 if (pickedDate != null) {
-                  _dateController.text = pickedDate.toIso8601String().split('T')[0];
+                  _dateController.text =
+                      pickedDate.toIso8601String().split('T')[0];
                 }
               },
             ),
             const SizedBox(height: 20),
             TextField(
+              style: TextStyle(
+                color: Colors.black, // Change text color
+                fontSize: 18, // Change font size
+              ),
               controller: _timeController,
-              decoration: const InputDecoration(labelText: 'Select Time'),
+              decoration: const InputDecoration(
+                labelText: 'Select Time',
+                labelStyle: TextStyle(
+                  color: Colors.black, // Change label text color
+                  fontSize: 16,
+                ),
+              ),
               onTap: () async {
                 TimeOfDay? pickedTime = await showTimePicker(
                   context: context,
@@ -77,6 +109,16 @@ class _BookingScreenState extends State<BookingScreen> {
                   );
                 }
               },
+              style: ElevatedButton.styleFrom(
+              backgroundColor: Colors.lightGreen,      // Background color
+              foregroundColor: Colors.white,    // Text color
+              padding: EdgeInsets.symmetric(horizontal: 24, vertical: 12),
+              textStyle: TextStyle(
+                fontSize: 18,
+                fontWeight: FontWeight.bold,
+              ),
+              elevation: 5, // Shadow elevation
+            ),
               child: const Text('Submit Booking'),
             ),
           ],
