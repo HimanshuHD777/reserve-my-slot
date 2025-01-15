@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 /*
 import 'package:flutter/material.dart';
 
@@ -48,6 +49,8 @@ class BookingScreen extends StatelessWidget {
 }
 */
 /*
+=======
+>>>>>>> 0c1d2e6e203804a928a126c61a4b651ac6741225
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 
@@ -63,6 +66,7 @@ class BookingScreen extends StatefulWidget {
 class _BookingScreenState extends State<BookingScreen> {
   DateTime? selectedDate;
   TimeOfDay? selectedTime;
+  String? selectedService;
 
   final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
 
@@ -73,9 +77,7 @@ class _BookingScreenState extends State<BookingScreen> {
   }
 
   String get formattedTime {
-    return selectedTime != null
-        ? selectedTime!.format(context)
-        : 'Select Time';
+    return selectedTime != null ? selectedTime!.format(context) : 'Select Time';
   }
 
   Future<void> _pickDate() async {
@@ -178,17 +180,24 @@ class _BookingScreenState extends State<BookingScreen> {
               TextFormField(
                 readOnly: true,
                 decoration: InputDecoration(
+                  hintText: formattedDate, // Placeholder text inside the field
+                  hintStyle: const TextStyle(
+                    fontFamily: 'RobotoSlab',
+                    color: Colors.black,
+                  ),
                   labelText: formattedDate,
                   labelStyle: const TextStyle(
                     fontFamily: 'RobotoSlab',
-                    color: Colors.white70,
+                    color: Colors.black,
                   ),
                   enabledBorder: OutlineInputBorder(
-                    borderSide: BorderSide(color: Colors.red.shade300),
+                    borderSide: BorderSide(color: Colors.black),
                   ),
                   focusedBorder: OutlineInputBorder(
-                    borderSide: BorderSide(color: Colors.red),
+                    borderSide: BorderSide(color: Colors.grey),
                   ),
+                  contentPadding: EdgeInsets.symmetric(
+                      horizontal: 16, vertical: 12), // Adjust the padding here
                 ),
                 onTap: _pickDate,
               ),
@@ -196,30 +205,81 @@ class _BookingScreenState extends State<BookingScreen> {
               TextFormField(
                 readOnly: true,
                 decoration: InputDecoration(
+                  hintText: formattedTime, // Placeholder text inside the field
+                  hintStyle: const TextStyle(
+                    fontFamily: 'RobotoSlab',
+                    color: Colors.black,
+                  ),
                   labelText: formattedTime,
                   labelStyle: const TextStyle(
                     fontFamily: 'RobotoSlab',
-                    color: Colors.white70,
+                    color: Colors.black,
                   ),
                   enabledBorder: OutlineInputBorder(
-                    borderSide: BorderSide(color: Colors.red.shade300),
+                    borderSide: BorderSide(color: Colors.black),
                   ),
                   focusedBorder: OutlineInputBorder(
-                    borderSide: BorderSide(color: Colors.red),
+                    borderSide: BorderSide(color: Colors.grey),
                   ),
                 ),
                 onTap: _pickTime,
+              ),
+              const SizedBox(height: 16),
+              const SizedBox(height: 16),
+              Container(
+                width: 200,
+                child: DropdownButtonFormField<String>(
+                  dropdownColor: Colors.lightGreen,
+                  decoration: InputDecoration(
+                    labelText: 'Select a Service',
+                    enabledBorder: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(12),
+                      borderSide: BorderSide(color: Colors.black, width: 1.5),
+                    ),
+                    // borderSide:BorderSide() ,
+
+                    labelStyle: TextStyle(
+                      fontSize: 16,
+                      fontWeight: FontWeight.w500,
+                      color: Colors.black,
+                    ),
+                    border: OutlineInputBorder(),
+                  ),
+                  value: selectedService,
+                  items: ['Service1', 'Service2', 'Service3']
+                      .map((service) => DropdownMenuItem(
+                            value: service,
+                            child: Text(service),
+                          ))
+                      .toList(),
+                  onChanged: (value) {
+                    setState(() {
+                      selectedService = value;
+                    });
+                  },
+                  style: TextStyle(
+                    fontSize: 18,
+                    // background:Colors.yellow,
+                    color: Colors.black,
+                  ),
+                  validator: (value) {
+                    if (value == null || value.isEmpty) {
+                      return 'Please select a service';
+                    }
+                    return null;
+                  },
+                ),
               ),
               const SizedBox(height: 32),
               Center(
                 child: ElevatedButton(
                   style: ElevatedButton.styleFrom(
-                    backgroundColor: Colors.red,
+                    backgroundColor: Colors.lightGreen,
                     textStyle: const TextStyle(
-                      fontFamily: 'RobotoSlab',
-                      fontSize: 16,
-                      fontWeight: FontWeight.bold,
-                    ),
+                        fontFamily: 'RobotoSlab',
+                        fontSize: 16,
+                        fontWeight: FontWeight.bold,
+                        color: Colors.white),
                   ),
                   onPressed: _submitBooking,
                   child: const Text('Submit Booking'),
@@ -229,7 +289,7 @@ class _BookingScreenState extends State<BookingScreen> {
           ),
         ),
       ),
-      backgroundColor: Colors.black,
+      backgroundColor: Colors.white,
     );
   }
 }

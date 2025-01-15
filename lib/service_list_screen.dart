@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 /*
 import 'package:flutter/material.dart';
 import 'booking_screen.dart';
@@ -42,7 +43,10 @@ class ServiceListScreen extends StatelessWidget {
 }
 */
 /*
+=======
+>>>>>>> 0c1d2e6e203804a928a126c61a4b651ac6741225
 import 'package:flutter/material.dart';
+import 'package:reservemyslot/styles/styles.dart';
 import 'booking_screen.dart';
 
 class ServiceListScreen extends StatelessWidget {
@@ -59,13 +63,15 @@ class ServiceListScreen extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: const Text('Service List'),
+        titleTextStyle: headingStyle,
       ),
+
       body: ListView.builder(
         itemCount: services.length,
         itemBuilder: (context, index) {
           final service = services[index];
           return Card(
-            color: Colors.grey[900],
+            color: Colors.lightGreen,
             margin: const EdgeInsets.symmetric(horizontal: 16.0, vertical: 8.0),
             child: ListTile(
               title: Text(
@@ -80,7 +86,8 @@ class ServiceListScreen extends StatelessWidget {
               ),
               trailing: const Icon(
                 Icons.arrow_forward,
-                color: Colors.red,
+                color: Colors.white,
+                // style:IconColor,
               ),
               onTap: () {
                 Navigator.push(

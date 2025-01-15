@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 /*
 import 'package:flutter/material.dart';
 import 'service_list_screen.dart';
@@ -28,6 +29,8 @@ class MyApp extends StatelessWidget {
 
 
 
+=======
+>>>>>>> 0c1d2e6e203804a928a126c61a4b651ac6741225
 import 'package:flutter/material.dart';
 import 'service_list_screen.dart';
 
@@ -44,10 +47,9 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'Service Booking App',
       theme: ThemeData(
-        primarySwatch: Colors.red,
-        scaffoldBackgroundColor: Colors.black,
+        scaffoldBackgroundColor: Colors.white,
         appBarTheme: const AppBarTheme(
-          backgroundColor: Colors.red,
+          backgroundColor: Colors.lightGreen,
           titleTextStyle: TextStyle(
             fontFamily: 'RobotoSlab',
             fontSize: 20,
@@ -69,7 +71,7 @@ class MyApp extends StatelessWidget {
         ),
         elevatedButtonTheme: ElevatedButtonThemeData(
           style: ElevatedButton.styleFrom(
-            backgroundColor: Colors.red,
+            backgroundColor: Color(0xFF8C56D6),
             textStyle: const TextStyle(
               fontFamily: 'RobotoSlab',
               fontSize: 16,
