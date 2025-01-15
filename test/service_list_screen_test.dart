@@ -1,6 +1,6 @@
 import 'package:flutter_test/flutter_test.dart';
 import 'package:flutter/material.dart';
-import 'package:lib/service_list_screen.dart';
+import 'package:reservemyslot/service_list_screen.dart';
 
 void main() {
   testWidgets('Displays services and allows navigation to booking screen', (WidgetTester tester) async {

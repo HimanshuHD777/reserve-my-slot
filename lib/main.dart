@@ -1,36 +1,3 @@
-<<<<<<< HEAD
-/*
-import 'package:flutter/material.dart';
-import 'service_list_screen.dart';
-
-void main() {
-  runApp(const MyApp());
-}
-
-class MyApp extends StatelessWidget {
-  const MyApp({Key? key}) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      title: 'Reserve My Slot',
-      theme: ThemeData(
-        primarySwatch: Colors.purple,
-      ),
-      initialRoute: '/',
-      routes: {
-        '/': (context) => const ServiceListScreen(),
-      },
-    );
-  }
-}
-*/
-
-
-
-=======
->>>>>>> 0c1d2e6e203804a928a126c61a4b651ac6741225
 import 'package:flutter/material.dart';
 import 'service_list_screen.dart';
 

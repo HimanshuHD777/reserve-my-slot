@@ -1,6 +1,6 @@
 import 'package:flutter_test/flutter_test.dart';
 import 'package:flutter/material.dart';
-import 'package:reservemyslot\lib\user_selection_screen.dart';
+import 'package:reservemyslot/user_selection_screen.dart';
 
 void main() {
   testWidgets('Displays dropdown and navigates to user bookings', (WidgetTester tester) async {
